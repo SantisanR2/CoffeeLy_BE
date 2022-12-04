@@ -14,6 +14,7 @@ urlpatterns = [
     path('user/delete', views.UserDeleteView.as_view()),
     path('finca/<int:pk>', views.FincaDetailView.as_view()), 
     path('finca/', views.FincaCreateView.as_view()),
+    path('finca/All', views.FincaAllView.as_view()),
     path('finca/download', views.FincaDownloadView.as_view()), 
     path('finca/update/<int:pk>', views.FincaUpdateView.as_view()), 
     path('finca/delete', views.FincaDeleteView.as_view()),
