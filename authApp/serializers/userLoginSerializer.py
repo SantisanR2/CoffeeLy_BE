@@ -6,6 +6,7 @@ from authApp.models.user import User
 
 
 class UserLoginSerializer(serializers.Serializer):
+    is_superuser = serializers.BooleanField(read_only=True)
     correo = serializers.EmailField()
     password = serializers.CharField(max_length=128, write_only=True)
     access = serializers.CharField(read_only=True)
@@ -44,6 +45,7 @@ class UserLoginSerializer(serializers.Serializer):
                 'name': user.name,
                 'role': user.role,
                 'finca': user.finca,
+                'is_superuser': user.is_superuser
             }
 
             return validation

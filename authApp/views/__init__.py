@@ -10,6 +10,7 @@ from .Finca.fincaDetailView import FincaDetailView
 from .Finca.fincaUpdateView import FincaUpdateView
 from .Finca.fincaDeleteView import FincaDeleteView
 from .Finca.fincaDownloadView import FincaDownloadView
+from .Finca.fincaAllView import FincaAllView
 from .Siembra.siembraCreateView import SiembraCreateView
 from .Siembra.siembraByLote import SiembraByLoteView
 from .Siembra.siembraUpdateView import SiembraUpdateView

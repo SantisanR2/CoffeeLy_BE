@@ -27,6 +27,8 @@ class UserLoginView(APIView):
                 'finca': serializer.data['finca'],
                 'role': serializer.data['role'],
                 'name': serializer.data['name'],
+                'is_superuser': serializer.data['is_superuser'],
+
                 'authenticatedUser': {
                     'correo': serializer.data['correo'],
                     'role': serializer.data['role']
