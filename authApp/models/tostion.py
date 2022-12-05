@@ -17,7 +17,7 @@ class Tostion(models.Model):
     tiempoPromedio = models.FloatField('TiempoPromedio')
     aromas = models.CharField('Aromas', max_length=500)
     agtron = models.FloatField('Agtron')
-    curva = models.FileField(upload_to='docs/', max_length=254)
+    curva = models.FileField()
     lote = models.OneToOneField(Lote, on_delete=models.CASCADE, blank=True)
     user = models.ForeignKey(User, related_name='Tostion', on_delete=models.CASCADE, blank=True)
     maquina = models.ForeignKey(Maquina, on_delete=models.CASCADE, blank=True, default=0)
