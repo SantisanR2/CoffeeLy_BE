@@ -11,6 +11,5 @@ class Catacion(models.Model):
     tiempo3 = models.FloatField('Tiempo3')
     temp3 = models.FloatField('Temperatura3')
     puntaje = models.FloatField('Puntaje')
-    tabla = models.FileField(upload_to='docs/', max_length=254)
     lote = models.OneToOneField(Lote, on_delete=models.CASCADE, blank=True)
     user = models.ForeignKey(User, related_name='Catacion', on_delete=models.CASCADE, blank=True)
