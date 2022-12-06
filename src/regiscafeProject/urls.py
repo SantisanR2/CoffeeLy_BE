@@ -91,4 +91,9 @@ urlpatterns = [
     path('tostion/All', views.TostionByLoteView.as_view()),
     path('tostion/update/<int:pk>', views.TostionUpdateView.as_view()),
     path('tostion/delete', views.TostionDeleteView.as_view()),
-    path('tostion/download', views.TostionDownloadView.as_view()),]
+    path('tostion/download', views.TostionDownloadView.as_view()),
+    path('catacion/', views.CatacionCreateView.as_view()),
+    path('catacion/All', views.CatacionByLoteView.as_view()),
+    path('catacion/update/<int:pk>', views.CatacionUpdateView.as_view()),
+    path('catacion/delete', views.CatacionDeleteView.as_view()),
+    path('catacion/download', views.CatacionDownloadView.as_view())]
