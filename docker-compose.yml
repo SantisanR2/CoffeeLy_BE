@@ -1,0 +1,26 @@
+version: '3.7'
+x-app: &default-app
+  build: ./src
+  depends_on:
+    - postgres
+  env_file: .envs/.env
+  volumes:
+    - ./src:/src/
+
+services:
+  postgres:
+    image: postgres:10-alpine
+    env_file: .envs/.env
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./.postgres:/var/lib/postgresql/data
+
+  django:
+    <<: *default-app
+    command: ./django-entrypoint-dev.sh
+    depends_on:
+      - postgres
+    env_file: .envs/.env
+    ports:
+      - "8000:8000"

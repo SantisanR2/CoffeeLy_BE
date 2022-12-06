@@ -1,4 +1,5 @@
 import os
+import environ
 """
 Django settings for regiscafeProject project.
 
@@ -13,7 +14,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
-
+env = environ.Env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +28,7 @@ SECRET_KEY = 'django-insecure-ytt@r*b6uer*g7$5*!_b(e3%7m5w+ccpq_6g=j)c&g3z+cupvu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True
 
 # Application definition
@@ -106,11 +107,11 @@ WSGI_APPLICATION = 'regiscafeProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd67tuq8mvvtid9',
-        'USER': 'ktlckdeopxbsbw',
-        'PASSWORD': 'dfaee87bd45109b607bcc485c9ad445aaac3520865b0241eb2895df5d54a658d',
-        'HOST': 'ec2-3-229-11-55.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'NAME': env("POSTGRES_DB", default=""),
+        'USER': env("POSTGRES_USER", default=""),
+        'PASSWORD': env('POSTGRES_PASSWORD',default=""),
+        'HOST': env('POSTGRES_HOST',default=""),
+        'PORT': env('POSTGRES_PORT',default=""),
     }
 }
 
