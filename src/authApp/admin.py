@@ -34,3 +34,4 @@ admin.site.register(Secado)
 admin.site.register(Seleccion)
 admin.site.register(Siembra)
 admin.site.register(Tostion)
+
