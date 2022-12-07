@@ -11,5 +11,6 @@ class Siembra(models.Model):
     semilla = models.CharField('Semilla', max_length=50)
     lote = models.OneToOneField(Lote, on_delete=models.CASCADE, blank=False)
     user = models.ForeignKey(User, related_name='Siembra', on_delete=models.CASCADE, blank=True) 
-
     objects = CopyManager()
+    
+    
