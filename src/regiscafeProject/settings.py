@@ -47,8 +47,8 @@ INSTALLED_APPS = [
 ]
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=2),
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=5),
+    'REFRESH_TOKEN_LIFETIME': timedelta(hours=10),
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
     'UPDATE_LAST_LOGIN': False,
@@ -107,11 +107,11 @@ WSGI_APPLICATION = 'regiscafeProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env("POSTGRES_DB", default=""),
-        'USER': env("POSTGRES_USER", default=""),
-        'PASSWORD': env('POSTGRES_PASSWORD',default=""),
-        'HOST': env('POSTGRES_HOST',default=""),
-        'PORT': env('POSTGRES_PORT',default=""),
+        'NAME': env("POSTGRES_DB", default="backend"),
+        'USER': env("POSTGRES_USER", default="backend_user"),
+        'PASSWORD': env('POSTGRES_PASSWORD',default="backend."),
+        'HOST': env('POSTGRES_HOST',default="3.239.210.72"),
+        'PORT': env('POSTGRES_PORT',default="5432"),
     }
 }
 
